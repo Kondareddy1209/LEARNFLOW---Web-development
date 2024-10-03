@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Quiz Game</h1>
+        <div id="game-container">
+            <div id="difficulty-container" class="btn-container">
+                <p>Select Difficulty:</p>
+                <button id="easy-btn">Easy</button>
+                <button id="medium-btn">Medium</button>
+                <button id="hard-btn">Hard</button>
+            </div>
+            <div id="question-container" class="hide">
+                <h2 id="question">Question Text</h2>
+            </div>
+            <div id="answers" class="btn-container hide">
+                <!-- Buttons for answers will be dynamically generated here -->
+            </div>
+            <div class="info hide">
+                <p id="score">Score: 0</p>
+                <p id="timer">Time: 30</p>
+            </div>
+            <div id="start-btn-container">
+                <button id="start-btn" class="hide">Start Quiz</button>
+                <button id="back-btn" class="hide">Back</button> <!-- New Back Button -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
