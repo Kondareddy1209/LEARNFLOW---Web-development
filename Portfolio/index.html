@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/128e65d304.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container"> 
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars"></i>
+            </nav>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            <div class="header-text">
+                <p>CyberSecurity Analyst</p>
+                <h1>Hi, I'm <span>KondaReddy</span><br> From India</h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-----about------> 
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="selfie photo.jpg" alt="selfie photo">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am a 3rd-year Computer Science student at Saveetha School of Engineering, specializing in cybersecurity and cloud computing. My 
+                    focus is on cyber defense, network security, and cloud infrastructure, driven by a passion for safeguarding digital assets.
+                    I have completed a virtual internship in cloud computing with Teachnook, gaining hands-on experience with tools like Oracle Cloud 
+                    Infrastructure and network security simulations. Through this and other projects, I have developed skills in threat analysis, network 
+                    management, and cloud architecture.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Hobbies')">Hobbies</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>CyberSecurity Analyst</span><br>Analysing the Security</li>
+                            <li><span>Web Security Development</span><br>Web Security Development</li>
+                            <li><span>Web Development</span><br>HTML, CSS</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2024 - current</span><br>Saveetha School Of Engineering<br>currently CGPA 8.2</li>
+                        </ul>
+                        <ul>
+                            <li><span>2020 - 2022</span><br>Sri Venkateswara Junior College<br>Marks scored 853</li>
+                        </ul>
+                        <ul>
+                            <li><span>2020</span><br>Vijaya High School<br>Marks Scored 585</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Hobbies">
+                        <ul>
+                            <li>Playing games</li>
+                            <li>Reading Books</li>
+                            <li>Travelling</li>
+                            <li>Web Browsing</li>
+                            <li>Searching content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--------------services-----------> 
+    <div id="Services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>CSE ENGINEER</h2>
+                    <p>I am involved in many aspects of computing, from the design of individual microprocessors to supercomputers, circuit designing, and writing software.</p>
+                    <a href="repostories.html" class="btn btn2">View GitHub Repositories</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Web Development</h2>
+                    <p>With a keen interest in Front-end Development and skills in HTML, CSS, I focus on creating user-friendly web applications.</p>
+                    <a href="web.html" class="btn btn2">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>CyberSecurity Analyst</h2>
+                    <p>I monitor, prevent, and stop attacks on private data, implementing firewalls and security systems to protect data.</p>
+                    <a href="projects.html" class="btn btn2">CyberSecurity projects</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-certificate"></i>
+                    <h2>Certifications</h2>
+                    <b>List of my Certifications:</b><br>
+                    🎓 Google Analytics Certification <br>
+                    🎓 Oracle Cloud Infrastructure Certified AI Foundations Associate <br>
+                    🎓 Cybersecurity Job Simulation - PWC <br>
+                    <a href="certifications.html" class="btn btn2">View Certifications</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------portfolio------------>
+    <div id="Portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="my1.jpg" alt="Work 1">
+                    <div class="layer">
+                        <h3>Cybersecurity Analyst</h3>
+                        <p>I focus on protecting computer systems and networks from cyber threats, monitor for suspicious activity, and help prevent breaches.</p>
+                        <a href="projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="my2.jpg" alt="Work 2">
+                    <div class="layer">
+                        <h3>Threat Detection</h3>
+                        <p>I specialize in identifying potential cyber threats and monitoring systems for unusual activity to prevent attacks.</p>
+                        <a href="threat.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="my3.jpg" alt="Work 3">
+                    <div class="layer">
+                        <h3>Cybersecurity Framework</h3>
+                        <p>I apply security controls, conduct risk assessments, and ensure compliance with security standards to safeguard networks.</p>
+                        <a href="analyst.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    
+    <!----------contact-----------> 
+    <div id="Contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> rkonda959@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9392887268</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/mr_konda_reddy.c_18/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ambavaram-tirumala-kondareddy-b68851275/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100057444433769"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/Kondareddy1209"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="Resume.docx" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="Email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="message"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright Konda. <span class="heart">💚</span> Made for my personal portfolio purpose.</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxPMZFtxLOd4L-rJU7jnCUyH_LzQaNPZBmyHahySLPodTmbApV5dNB5hDdTVMiwyxxdBA/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const message = document.getElementById("message");
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    message.innerHTML = "Message sent successfully";
+                    setTimeout(function() {
+                        message.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>

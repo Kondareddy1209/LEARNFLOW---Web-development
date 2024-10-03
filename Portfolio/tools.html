@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tool-item {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .tool-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .tool-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .tool-item p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agricultural Tools</h1>
+    </header>
+    <div class="container">
+        <div class="tools-grid">
+            <div class="tool-item">
+                <img src="tractor.jpg" alt="Tractor">
+                <h3>Tractor</h3>
+                <p>Powerful machine for plowing and tilling</p>
+            </div>
+            <div class="tool-item">
+                <img src="plow.jpg" alt="Plow">
+                <h3>Plow</h3>
+                <p>Used for turning over soil</p>
+            </div>
+            <div class="tool-item">
+                <img src="harrow.jpg" alt="Harrow">
+                <h3>Harrow</h3>
+                <p>Prepares seedbeds by breaking up soil</p>
+            </div>
+            <div class="tool-item">
+                <img src="sprayer.jpg" alt="Sprayer">
+                <h3>Sprayer</h3>
+                <p>Applies pesticides and fertilizers</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

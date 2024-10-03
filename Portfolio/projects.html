@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio - GitHub Projects">
+    <title>Portfolio |KondaReddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url("projects.jpg");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Allow the container to grow and push the footer down */
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            flex: 1 1 calc(33.333% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+        .project a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+        }
+        .heart {
+            color: red;
+        }
+        @media (max-width: 768px) {
+            .project {
+                flex: 1 1 calc(50% - 2rem);
+            }
+        }
+        @media (max-width: 576px) {
+            .project {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kondareddy's Projects For Cybersecurity Analyst</h1>
+</header>
+
+<div class="container">
+    <h2>GitHub Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Analysis of Network Traffic</h3>
+            <p>A project analyzing network traffic using log aggregation and cybersecurity tools.</p>
+            <a href="https://github.com/Kondareddy1209/-Analysis-of-Network-Traffic-and-Security-through-Log-Aggregation-cybersecurity-project">View on GitHub</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Copyright Konda. <span class="heart">❤️</span> Made for my personal portfolio purpose</p>
+</footer>
+
+</body>
+</html>

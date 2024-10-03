@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        .seeds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .seeds-item {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .seeds-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .seeds-item h3 {
+            margin: 0 0 10px 0;
+        }
+        .seeds-item p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agriculture Seeds</h1>
+    </header>
+    <div class="container">
+        <div class="seeds-grid">
+            <div class="seeds-item">
+                <img src="cotton.jpg" alt="cotton">
+                <h3>Cotton Seeds</h3>
+                <p>High-quality cotton seeds</p>
+            </div>
+            <div class="seeds-item">
+                <img src="paddy.jpg" alt="paddy">
+                <h3>Paddy Seeds</h3>
+                <p>Premium paddy seeds</p>
+            </div>
+            <div class="seeds-item">
+                <img src="wheat.jpg" alt="wheat">
+                <h3>Wheat Seeds</h3>
+                <p>Top-grade wheat seeds</p>
+            </div>
+            <div class="seeds-item">
+                <img src="maize.jpg" alt="maize">
+                <h3>Maize Seeds</h3>
+                <p>Superior maize seeds</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
