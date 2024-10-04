@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>LEARNFLOW - Web Development</title>
 </head>
 <body>
 
@@ -99,13 +99,24 @@ npm start</code></pre>
 <h2 id="license">License</h2>
 <p>This project is licensed under the My License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-<div class="social-media">
-    <h2>Connect with Me</h2>
-    <a href="https://github.com/Kondareddy1209" target="_blank" title="GitHub"><i class="fa-brands fa-square-github"></i></a>
-    <a href="https://www.linkedin.com/in/ambavaram-tirumala-kondareddy-b68851275/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://www.instagram.com/mr_konda_reddy.c_18/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://kondareddy1209.github.io/" target="_blank" title="Portfolio"><i class="fas fa-user"></i></a>
-</div>
+<h2>🤳 Connect with me:</h2>
+
+<a href="https://www.linkedin.com/in/ambavaram-tirumala-kondareddy-b68851275/" target="_blank" aria-label="LinkedIn">
+  <img align="left" alt="Kondareddy | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+</a>
+
+<a href="https://www.instagram.com/mr_konda_reddy.c_18/" target="_blank" aria-label="Instagram">
+  <img align="left" alt="Kondareddy | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />
+</a>
+
+<a href="https://github.com/Kondareddy1209" target="_blank" aria-label="GitHub">
+  <img align="left" alt="Kondareddy | GitHub" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />
+</a>
+
+<a href="https://kondareddy1209.github.io/" target="_blank" aria-label="Portfolio">
+  <img align="left" alt="Kondareddy | Portfolio" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/globe.svg" />
+</a>
+<br/>
 
 <p>Feel free to reach out for any questions or collaborations!</p>
 
