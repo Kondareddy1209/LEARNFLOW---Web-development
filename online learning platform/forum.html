@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Forum Discussions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f0f0, #d9e4f5);
+        }
+
+        header, footer {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            height: 60px;
+        }
+
+        .forum {
+            padding: 20px;
+        }
+
+        .discussion {
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            margin: 15px 0;
+            padding: 10px;
+        }
+
+        .discussion h3 {
+            margin: 0;
+        }
+
+        .discussion p {
+            margin: 5px 0;
+        }
+
+        .new-discussion {
+            margin-top: 20px;
+        }
+
+        .new-discussion input, .new-discussion textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .new-discussion button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .new-discussion button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduLearn</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="lectures.html">Video Lectures</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="forum">
+            <h2>Forum Discussions</h2>
+            <div id="discussionList"></div>
+
+            <div class="new-discussion">
+                <h3>Create a New Discussion</h3>
+                <input type="text" id="discussionTitle" placeholder="Discussion Title" required>
+                <textarea id="discussionContent" rows="5" placeholder="Write your message here..." required></textarea>
+                <button onclick="addDiscussion()">Post Discussion</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EduLearn. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const discussions = [];
+
+        function addDiscussion() {
+            const title = document.getElementById("discussionTitle").value;
+            const content = document.getElementById("discussionContent").value;
+
+            if (title && content) {
+                const discussion = {
+                    title: title,
+                    content: content,
+                    date: new Date().toLocaleString()
+                };
+                discussions.push(discussion);
+                displayDiscussions();
+                clearForm();
+            } else {
+                alert("Please fill in both fields.");
+            }
+        }
+
+        function displayDiscussions() {
+            const discussionList = document.getElementById("discussionList");
+            discussionList.innerHTML = ""; 
+
+            discussions.forEach(discussion => {
+                const discussionDiv = document.createElement("div");
+                discussionDiv.classList.add("discussion");
+                discussionDiv.innerHTML = `<h3>${discussion.title}</h3>
+                                            <p>${discussion.content}</p>
+                                            <p><em>Posted on: ${discussion.date}</em></p>`;
+                discussionList.appendChild(discussionDiv);
+            });
+        }
+
+        function clearForm() {
+            document.getElementById("discussionTitle").value = "";
+            document.getElementById("discussionContent").value = "";
+        }
+    </script>
+</body>
+</html>

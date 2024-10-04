@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f0f0, #d9e4f5);
+        }
+
+        header, footer {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            height: 60px;
+        }
+
+        .courses {
+            padding: 20px;
+        }
+
+        .course {
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            margin: 15px;
+            padding: 10px;
+        }
+
+        .course a {
+            display: block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .course a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduLearn</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="lectures.html">Video Lectures</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="courses">
+            <h2>Available Courses</h2>
+            <div class="course">
+                <p>Course 1: Introduction to Programming</p>
+                <a href="https://www.coursera.org/in/articles/what-is-programming" target="_blank">Coursera</a>
+            </div>
+            <div class="course">
+                <p>Course 2: Web Development Basics</p>
+                <a href="https://www.geeksforgeeks.org/web-development/" target="_blank">W3Schools</a>
+            </div>
+            <div class="course">
+                <p>Course 3: Data Structures and Algorithms</p>
+                <a href="https://www.w3schools.com/dsa/dsa_intro.php" target="_blank">W3Schools</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Learn. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

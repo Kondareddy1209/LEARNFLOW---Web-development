@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Quizzes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f0f0, #d9e4f5);
+        }
+
+        header, footer {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            height: 60px;
+        }
+
+        .quizzes {
+            padding: 20px;
+        }
+
+        .quiz {
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            margin: 15px;
+            padding: 10px;
+        }
+
+        .quiz a {
+            display: block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .quiz a:hover {
+            text-decoration: underline;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduLearn</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="lectures.html">Video Lectures</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="quizzes">
+            <h2>Select a Quiz Topic</h2>
+            <select id="topicSelector" onchange="loadQuiz()">
+                <option value="">Select a topic...</option>
+                <option value="programming">Programming Basics</option>
+                <option value="webDevelopment">Web Development Concepts</option>
+                <option value="dataStructures">Data Structures Overview</option>
+            </select>
+
+            <div id="quizContainer" class="quiz" style="display:none;">
+                <h3 id="quizTitle"></h3>
+                <div id="questionContainer"></div>
+                <button id="submitButton" style="display:none;" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EduLearn. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const quizzes = {
+            programming: [
+                { question: "What does HTML stand for?", options: ["Hypertext Markup Language", "HighText Machine Language", "Hypertext Markdown Language"], answer: 0 },
+                { question: "Which language is used for styling web pages?", options: ["HTML", "CSS", "JavaScript"], answer: 1 },
+            ],
+            webDevelopment: [
+                { question: "What is the correct HTML element for inserting a line break?", options: ["<break>", "<br>", "<lb>"], answer: 1 },
+                { question: "Which HTML attribute is used to define inline styles?", options: ["style", "font", "class"], answer: 0 },
+            ],
+            dataStructures: [
+                { question: "Which of the following is a linear data structure?", options: ["Array", "Graph", "Tree"], answer: 0 },
+                { question: "What data structure uses LIFO?", options: ["Queue", "Stack", "Array"], answer: 1 },
+            ]
+        };
+
+        function loadQuiz() {
+            const topicSelector = document.getElementById("topicSelector");
+            const selectedTopic = topicSelector.value;
+            const quizContainer = document.getElementById("quizContainer");
+            const questionContainer = document.getElementById("questionContainer");
+            const quizTitle = document.getElementById("quizTitle");
+            const submitButton = document.getElementById("submitButton");
+
+            questionContainer.innerHTML = "";
+            if (selectedTopic) {
+                quizTitle.textContent = selectedTopic.charAt(0).toUpperCase() + selectedTopic.slice(1).replace(/([A-Z])/g, ' $1');
+                quizzes[selectedTopic].forEach((q, index) => {
+                    const questionDiv = document.createElement("div");
+                    questionDiv.classList.add("question");
+                    questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+                    q.options.forEach((option, i) => {
+                        questionDiv.innerHTML += `
+                            <label>
+                                <input type="radio" name="question${index}" value="${i}">
+                                ${option}
+                            </label><br>`;
+                    });
+                    questionContainer.appendChild(questionDiv);
+                });
+                quizContainer.style.display = "block";
+                submitButton.style.display = "block";
+            } else {
+                quizContainer.style.display = "none";
+            }
+        }
+
+        function submitQuiz() {
+            const topicSelector = document.getElementById("topicSelector");
+            const selectedTopic = topicSelector.value;
+            const results = [];
+
+            quizzes[selectedTopic].forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                results.push(selectedOption ? (parseInt(selectedOption.value) === q.answer) : false);
+            });
+
+            const score = results.filter(result => result).length;
+            alert(`You scored ${score} out of ${results.length}`);
+        }
+    </script>
+</body>
+</html>

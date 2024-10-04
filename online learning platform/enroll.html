@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Enroll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="enroll-form" class="section-padding">
+        <h2>Enroll in a Course</h2>
+        <form action="enrollment-success.html" method="POST">
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="webdev">Web Development</option>
+                <option value="datasci">Data Science</option>
+                <option value="cybersec">Cybersecurity</option>
+            </select>
+            
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button type="submit" class="enroll-btn">Enroll</button>
+        </form>
+    </section>
+</body>
+</html>

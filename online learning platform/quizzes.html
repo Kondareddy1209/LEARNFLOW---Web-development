@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Quizzes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f0f0, #d9e4f5);
+        }
+
+        header, footer {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            height: 60px;
+        }
+
+        .quizzes {
+            padding: 20px;
+        }
+
+        .topic {
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            margin: 15px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .topic:hover {
+            background: #e6f0ff;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        .question-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduLearn</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="lectures.html">Video Lectures</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="quizzes">
+            <h2>Select a Quiz Topic</h2>
+            <div class="topic" onclick="loadQuiz('programming')">Programming Basics</div>
+            <div class="topic" onclick="loadQuiz('webDevelopment')">Web Development Concepts</div>
+            <div class="topic" onclick="loadQuiz('dataStructures')">Data Structures Overview</div>
+
+            <div id="questionContainer" class="question-container"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EduLearn. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const quizzes = {
+            programming: [
+                { question: "What does HTML stand for?", options: ["Hypertext Markup Language", "HighText Machine Language", "Hypertext Markdown Language"], answer: 0 },
+                { question: "Which language is used for styling web pages?", options: ["HTML", "CSS", "JavaScript"], answer: 1 },
+                { question: "Which symbol is used for comments in JavaScript?", options: ["//", "#", "/* */"], answer: 0 },
+                { question: "What is the correct way to declare a variable in JavaScript?", options: ["var x = 5;", "int x = 5;", "declare x = 5;"], answer: 0 },
+                { question: "Which method is used to convert a string to a number in JavaScript?", options: ["Number()", "parseInt()", "toString()"], answer: 1 }
+            ],
+            webDevelopment: [
+                { question: "What is the correct HTML element for inserting a line break?", options: ["<break>", "<br>", "<lb>"], answer: 1 },
+                { question: "Which HTML attribute is used to define inline styles?", options: ["style", "font", "class"], answer: 0 },
+                { question: "Which HTML element is used to define the main content of a webpage?", options: ["<main>", "<content>", "<body>"], answer: 0 },
+                { question: "Which HTML tag is used to create a hyperlink?", options: ["<link>", "<a>", "<href>"], answer: 1 },
+                { question: "What does CSS stand for?", options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets"], answer: 1 }
+            ],
+            dataStructures: [
+                { question: "Which of the following is a linear data structure?", options: ["Array", "Graph", "Tree"], answer: 0 },
+                { question: "What data structure uses LIFO?", options: ["Queue", "Stack", "Array"], answer: 1 },
+                { question: "What is the time complexity of accessing an element in an array?", options: ["O(n)", "O(1)", "O(log n)"], answer: 1 },
+                { question: "Which of the following is not a data structure?", options: ["Linked List", "Tree", "Function"], answer: 2 },
+                { question: "In which data structure can we insert and delete elements from both ends?", options: ["Array", "Deque", "Stack"], answer: 1 }
+            ]
+        };
+
+        function loadQuiz(topic) {
+            const questionContainer = document.getElementById("questionContainer");
+            questionContainer.innerHTML = "";  
+
+            const quizQuestions = quizzes[topic];
+
+            if (quizQuestions) {
+                quizQuestions.forEach((q, index) => {
+                    const questionDiv = document.createElement("div");
+                    questionDiv.classList.add("question");
+                    questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+                    q.options.forEach((option, i) => {
+                        questionDiv.innerHTML += `
+                            <label>
+                                <input type="radio" name="question${index}" value="${i}">
+                                ${option}
+                            </label><br>`;
+                    });
+                    questionContainer.appendChild(questionDiv);
+                });
+
+                const submitButton = document.createElement("button");
+                submitButton.textContent = "Submit Quiz";
+                submitButton.onclick = () => submitQuiz(topic);
+                questionContainer.appendChild(submitButton);
+                questionContainer.classList.add("active");  
+            }
+        }
+
+        function submitQuiz(topic) {
+            const results = [];
+            const quizQuestions = quizzes[topic];
+
+            quizQuestions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                results.push(selectedOption ? (parseInt(selectedOption.value) === q.answer) : false);
+            });
+
+            const score = results.filter(result => result).length;
+            alert(`You scored ${score} out of ${results.length}`);
+        }
+    </script>
+</body>
+</html>
